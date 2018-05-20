@@ -27,7 +27,6 @@ const app = {
         .querySelector('.warning')
         .addEventListener('click', ev => {
             ev.preventDefault()
-            debugger
             this.handleFav(rec, ev)
         })
 
@@ -35,7 +34,6 @@ const app = {
         .querySelector('.alert')
         .addEventListener('click', ev => {
             ev.preventDefault()
-            debugger
             this.handleDelete(rec, ev)
         })
       //item.dataset.genre = rec.Genre
