@@ -22,6 +22,20 @@ const app = {
       const item = this.template.cloneNode(true)
       item.querySelector('.title').textContent = rec.Title
       item.dataset.id = rec.id
+
+      item
+        .querySelector('.up')
+        .addEventListener('click', ev => {
+            ev.preventDefault()
+            this.handleUp(rec, ev)
+        })
+
+        item
+        .querySelector('.down')
+        .addEventListener('click', ev => {
+            ev.preventDefault()
+            this.handleDown(rec, ev)
+        })
       
       item
         .querySelector('.warning')
@@ -82,6 +96,16 @@ const app = {
 
         movie.fav = true
         ev.target.parentElement.parentElement.style.color = 'red';
+    },
+
+    handleUp(movie, ev){
+
+        
+    },
+
+    handleDown(movie, ev){
+
+        
     },
   }
   
