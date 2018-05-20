@@ -22,6 +22,14 @@ const app = {
       const item = this.template.cloneNode(true)
       item.querySelector('.title').textContent = rec.Title
       item.dataset.id = rec.id
+      
+      item
+        .querySelector('.warning')
+        .addEventListener('click', ev => {
+            ev.preventDefault()
+            debugger
+            this.handleFav(rec, ev)
+        })
 
       item
         .querySelector('.alert')
@@ -64,7 +72,18 @@ const app = {
         //removeFromArray(thing)
   
         ev.target.parentElement.parentElement.remove()
-        debugger
+    },
+
+    handleFav(movie, ev){
+
+        if( movie.fav == true){
+            ev.target.parentElement.parentElement.style.color = 'black'
+            movie.fav = false
+            return
+        }
+
+        movie.fav = true
+        ev.target.parentElement.parentElement.style.color = 'red';
     },
   }
   
