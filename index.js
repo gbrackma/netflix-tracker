@@ -124,7 +124,17 @@ class App{
     }
 
     handleEdit(movie, ev){
-        console.log('hande Edit')
+        const btn = ev.target
+        const item = btn.parentElement.parentElement
+        const nameF = item.querySelector('.title')
+
+        if(nameF.isContentEditable){
+            nameF.contentEditable = false
+            btn.textContent = 'Edit'
+        }else{
+            nameF.contentEditable = true
+            btn.textContent = 'Save'
+        }
         
     }
   }
