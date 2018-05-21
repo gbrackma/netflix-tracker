@@ -129,11 +129,16 @@ class App{
         const nameF = item.querySelector('.title')
 
         if(nameF.isContentEditable){
+            //make it no longer editable
             nameF.contentEditable = false
             btn.textContent = 'Edit'
+
+            //save the changes
+            movie.name = nameF.textContent
         }else{
             nameF.contentEditable = true
             btn.textContent = 'Save'
+            nameF.focus()
         }
         
     }
